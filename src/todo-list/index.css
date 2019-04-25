@@ -1,0 +1,9 @@
+.todolist_wrapper {
+    display: flex;
+    justify-content: center;
+    /*border: 1px solid brown;*/
+    padding: 0 0 0 40px;
+}
+.smb_btn {
+    margin: 0 0 0 15px;
+}
