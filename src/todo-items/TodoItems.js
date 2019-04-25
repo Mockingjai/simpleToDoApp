@@ -7,6 +7,7 @@ class TodoItems extends Component {
               <li className="taskElements" key={item.key}>
                   {item.text}
                   <button key={item.key} onClick={() => this.props.deleteItem(item.key)}>Click to delete</button>
+                  <button key={item.key} onClick={() => this.props.handleEdit(item.key)}>Click to edit</button>
               </li>
           </div>
       )

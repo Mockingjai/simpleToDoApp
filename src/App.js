@@ -31,6 +31,17 @@ class App extends Component {
            currentItem,
         });
     };
+    handleEdit = key => {
+        const filteredItems = this.state.items.filter(item => {
+            return item.key !== key;
+        });
+        const selectedItem = this.state.items.find(item => item.key === key);
+        console.log(selectedItem);
+        this.setState({
+            items: filteredItems,
+            currentItem: selectedItem.key,
+        })
+    };
     addItem = e => {
       e.preventDefault();
       const newItem = this.state.currentItem;
@@ -55,7 +66,11 @@ class App extends Component {
                 />
             </div>
             <div className="todoItem-wrapper">
-                <TodoItems entries={this.state.items}  deleteItem={this.deleteItem} />
+                <TodoItems
+                    entries={this.state.items}
+                    deleteItem={this.deleteItem}
+                    handleEdit={this.handleEdit}
+                />
             </div>
         </div>
     );
