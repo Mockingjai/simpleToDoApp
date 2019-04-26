@@ -38,17 +38,17 @@ class App extends Component {
           data: filteredData,
       })
   };
-  handleEdit = id => {
-      const filteredData = this.state.data.filter(item => item.id !== id);
-      const selectedData = this.state.data.find(item => item.id === id);
-      console.log(selectedData);
-      this.setState({
-          data: filteredData,
-          item: selectedData.title,
-          editItem: true,
-          id: id,
-      })
-  };
+  // handleEdit = id => {
+  //     const filteredData = this.state.data.filter(item => item.id !== id);
+  //     const selectedData = this.state.data.find(item => item.id === id);
+  //     console.log(selectedData);
+  //     this.setState({
+  //         data: filteredData,
+  //         item: selectedData.title,
+  //         editItem: true,
+  //         id: id,
+  //     })
+  // };
   render() {
     return (
         <div className="main">
@@ -62,8 +62,10 @@ class App extends Component {
             </div>
             <TodoList
                 data={this.state.data}
+                item={this.state.item}
+                id={this.state.id}
                 handleDelete={this.handleDelete}
-                handleEdit={this.handleEdit}
+                // handleEdit={this.handleEdit}
             />
         </div>
     );

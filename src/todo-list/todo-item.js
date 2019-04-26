@@ -1,17 +1,21 @@
 import React , { Component } from 'react';
 import './index.css';
-export default class TodoItem extends Component {
+class TodoItem extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return(
             <div>
                 <li className="item_wrapper">
                     <h6 className="task_name">{this.props.title}</h6>
                     <div>
-                        <span className="edit_wrapper" onClick={this.props.handleEdit}>Edit</span>
-                        <span className="delete_wrapper" onClick={this.props.handleDelete}>Delete</span>
+                        <button className="edit_wrapper" onClick={this.props.handleEdit}>Edit</button>
+                        <button className="delete_wrapper" onClick={this.props.handleDelete}>Delete</button>
                     </div>
                 </li>
             </div>
         )
     }
 }
+export default TodoItem;
