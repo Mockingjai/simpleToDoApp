@@ -1,9 +1,28 @@
-.todolist_wrapper {
-    display: flex;
-    justify-content: center;
-    /*border: 1px solid brown;*/
-    padding: 0 0 0 40px;
+ul,ol {
+    list-style: none;
 }
-.smb_btn {
-    margin: 0 0 0 15px;
+.item_wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    left: -18px;
+}
+.task_name {
+    margin: 0 120px 0 0;
+}
+.edit_wrapper {
+    border-right: 1px solid darkolivegreen;
+    font-family: Bahnschrift;
+    font-size: 12px;
+}
+.edit_wrapper:hover{
+    cursor: pointer;
+}
+.delete_wrapper {
+    font-family: Bahnschrift;
+    font-size: 12px;
+}
+.delete_wrapper:hover{
+    cursor: pointer;
 }
