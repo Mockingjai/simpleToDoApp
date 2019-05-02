@@ -6,18 +6,10 @@ export default class TodoList extends Component {
     constructor(props){
         super(props);
         this.state = {
+            item: this.props.title,
             isOpen: false,
         }
     }
-    toggleModal = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    };
-    handleEdit = title => {
-        this.toggleModal();
-        console.log(title);
-    };
     render() {
         return(
             <div>
@@ -37,11 +29,10 @@ export default class TodoList extends Component {
                      })
                     }
                 </ul>
-                <Modal show={this.state.isOpen}
-                       onClose={this.toggleModal}
-                       value={this.props.item}
-                       title={this.props.title}>
-                </Modal>
+                {/*<Modal show={this.state.isOpen}*/}
+                {/*       onClose={this.toggleModal}*/}
+                {/*       title={this.state.item}>*/}
+                {/*</Modal>*/}
             </div>
         )
     }
