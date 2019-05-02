@@ -2,34 +2,18 @@ import React , { Component } from 'react';
 import './index.css';
 import Modal from "../modal-window";
 class TodoItem extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            item: this.props.title,
-            isOpen: false,
-        }
-    }
-    toggleModal = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    };
-    handleEdit = title => {
-        this.toggleModal();
-        console.log(title);
-    };
     render() {
         return(
             <div>
                 <li className="item_wrapper">
                     <h6 className="task_name">{this.props.title}</h6>
                     <div>
-                        <button className="edit_wrapper" onClick={() => this.handleEdit(this.state.item)}>Edit</button>
+                        <button className="edit_wrapper" onClick={this.props.handleChange}>Edit</button>
                         <button className="delete_wrapper" onClick={this.props.handleDelete}>Delete</button>
                     </div>
-                    <Modal show={this.state.isOpen}
-                         onClose={this.toggleModal}
-                         title={this.state.item}>
+                    <Modal show={this.props.isOpen}
+                         // onClose={this.toggleModal}
+                         title={this.props.title}>
                     </Modal>
                 </li>
             </div>

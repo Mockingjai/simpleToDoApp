@@ -8,16 +8,13 @@ class App extends Component {
     super(props);
     this.state = {
         data: [],
-        item: '',
+        title: '',
         id: 0,
         editItem: false,
+        isOpen: false,
     }
   }
-  handleChange = e => {
-    this.setState({
-        item: e.target.value,
-    })
-  };
+  handleChange = e => this.setState({title: e.target.value});
   handleSubmit = e => {
     e.preventDefault();
     const newItem = {
@@ -49,6 +46,7 @@ class App extends Component {
           id: id,
       })
   };
+  handleChange = () => this.setState({isOpen: !this.state.isOpen});
   render() {
     return (
         <div className="main">
@@ -66,6 +64,8 @@ class App extends Component {
                 item={this.state.item}
                 id={this.state.id}
                 handleDelete={this.handleDelete}
+                handleChange={this.handleChange}
+                isOpen={this.state.isOpen}
             />
         </div>
     );

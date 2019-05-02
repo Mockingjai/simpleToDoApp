@@ -2,21 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 class Modal extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            item: this.props.title,
-        }
-    }
-    handleChange = e => {
-      this.setState({
-          item: e.target.value
-      })
-    };
-    handleEdit = e => {
-        console.log(this.state.item);
-        this.props.onClose();
-    };
     render() {
         // Render nothing if the "show" prop is false
         if(!this.props.show) {
@@ -25,9 +10,9 @@ class Modal extends React.Component {
         return (
             <div className="backdropStyle">
                 <div className="modalStyle">
-                    <input type="text" onChange={this.handleChange} value={this.state.item}/>
+                    <input type="text" onChange={this.handleChange} value={this.props.title}/>
                     <div className="footer">
-                        <button onClick={() => this.handleEdit(this.state.item)}>Edit</button>
+                        <button onClick={() => this.handleEdit(this.props.title)}>Edit</button>
                         <button onClick={this.props.onClose}>
                             Close
                         </button>
