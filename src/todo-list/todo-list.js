@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import TodoItem from './todo-item';
 import './index.css';
-import Modal from "../modal-window";
 export default class TodoList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            item: this.props.title,
+            title: this.props.title,
             isOpen: false,
         }
     }
@@ -29,10 +28,6 @@ export default class TodoList extends Component {
                      })
                     }
                 </ul>
-                {/*<Modal show={this.state.isOpen}*/}
-                {/*       onClose={this.toggleModal}*/}
-                {/*       title={this.state.item}>*/}
-                {/*</Modal>*/}
             </div>
         )
     }

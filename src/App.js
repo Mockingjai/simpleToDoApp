@@ -8,28 +8,28 @@ class App extends Component {
     super(props);
     this.state = {
         data: [],
-        item: '',
+        title: '',
         id: 0,
-        editItem: false,
+        editTitle: false,
     }
   }
   handleChange = e => {
     this.setState({
-        item: e.target.value,
+        title: e.target.value,
     })
   };
   handleSubmit = e => {
     e.preventDefault();
-    const newItem = {
+    const newTitle = {
         id: this.state.id,
-        title: this.state.item,
+        title: this.state.title,
     };
-    const updtateItems = [...this.state.data, newItem];
+    const updatedTitle = [...this.state.data, newTitle];
     this.setState({
-        data: updtateItems,
-        item: '',
+        data: updatedTitle,
+        title: '',
         id: this.state.id += 1,
-        editItem: false,
+        editTitle: false,
     });
   };
   handleDelete = id => {
@@ -44,8 +44,8 @@ class App extends Component {
       console.log(selectedData);
       this.setState({
           data: filteredData,
-          item: selectedData.title,
-          editItem: true,
+          title: selectedData.title,
+          editTitle: true,
           id: id,
       })
   };
@@ -54,16 +54,16 @@ class App extends Component {
         <div className="main">
             <div className="todoinput_wrapper">
                 <TodoInput
-                    item={this.state.item}
+                    title={this.state.title}
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
-                    editItem={this.state.editItem}
+                    editItem={this.state.editTitle}
                     handleEdit={this.handleEdit}
                 />
             </div>
             <TodoList
                 data={this.state.data}
-                item={this.state.item}
+                title={this.state.title}
                 id={this.state.id}
                 handleDelete={this.handleDelete}
             />

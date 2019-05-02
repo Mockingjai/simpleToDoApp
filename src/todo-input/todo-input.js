@@ -9,12 +9,12 @@ export default class TodoInput extends Component {
                       <input
                           type="text"
                           placeholder="Add Task"
-                          value={this.props.item}
+                          value={this.props.title}
                           onChange={this.props.handleChange}
                       />
                   </div>
                   <div className="submit_wrapper">
-                      <button type="submit">{this.props.editItem ? 'edit task' : 'add task'}</button>
+                      <button type="submit">{this.props.editTitle ? 'edit task' : 'add task'}</button>
                   </div>
               </form>
           </div>

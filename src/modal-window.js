@@ -5,16 +5,16 @@ class Modal extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            item: this.props.title,
+            title: this.props.title,
         }
     }
     handleChange = e => {
       this.setState({
-          item: e.target.value
+          title: e.target.value
       })
     };
     handleEdit = e => {
-        console.log(this.state.item);
+        console.log(this.state.title);
         this.props.onClose();
     };
     render() {
@@ -25,7 +25,7 @@ class Modal extends React.Component {
         return (
             <div className="backdropStyle">
                 <div className="modalStyle">
-                    <input type="text" onChange={this.handleChange} value={this.state.item}/>
+                    <input type="text" onChange={this.handleChange} value={this.state.title}/>
                     <div className="footer">
                         <button onClick={() => this.handleEdit(this.state.item)}>Edit</button>
                         <button onClick={this.props.onClose}>

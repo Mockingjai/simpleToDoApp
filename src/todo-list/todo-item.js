@@ -5,7 +5,7 @@ class TodoItem extends Component {
     constructor(props){
         super(props);
         this.state = {
-            item: this.props.title,
+            title: this.props.title,
             isOpen: false,
         }
     }
@@ -22,14 +22,14 @@ class TodoItem extends Component {
         return(
             <div>
                 <li className="item_wrapper">
-                    <h6 className="task_name">{this.props.title}</h6>
+                    <h6 className="task_name">{this.state.title}</h6>
                     <div>
-                        <button className="edit_wrapper" onClick={() => this.handleEdit(this.state.item)}>Edit</button>
+                        <button className="edit_wrapper" onClick={() => this.handleEdit(this.state.title)}>Edit</button>
                         <button className="delete_wrapper" onClick={this.props.handleDelete}>Delete</button>
                     </div>
                     <Modal show={this.state.isOpen}
                          onClose={this.toggleModal}
-                         title={this.state.item}>
+                         title={this.state.title}>
                     </Modal>
                 </li>
             </div>
