@@ -13,8 +13,8 @@ class Modal extends React.Component {
           title: e.target.value
       })
     };
-    handleEdit = e => {
-        console.log(this.state.title);
+    handleEdit = event => {
+        this.props.handleEdit(this.state.title);
         this.props.onClose();
     };
     render() {
@@ -27,7 +27,7 @@ class Modal extends React.Component {
                 <div className="modalStyle">
                     <input type="text" onChange={this.handleChange} value={this.state.title}/>
                     <div className="footer">
-                        <button onClick={() => this.handleEdit(this.state.item)}>Edit</button>
+                        <button onClick={() => this.handleEdit()}>Edit</button>
                         <button onClick={this.props.onClose}>
                             Close
                         </button>

@@ -15,8 +15,8 @@ class TodoItem extends Component {
         });
     };
     handleEdit = title => {
+        this.setState({title: title});
         this.toggleModal();
-        console.log(title);
     };
     render() {
         return(
@@ -24,10 +24,11 @@ class TodoItem extends Component {
                 <li className="item_wrapper">
                     <h6 className="task_name">{this.state.title}</h6>
                     <div>
-                        <button className="edit_wrapper" onClick={() => this.handleEdit(this.state.title)}>Edit</button>
+                        <button className="edit_wrapper" onClick={() => this.handleEdit()}>Edit</button>
                         <button className="delete_wrapper" onClick={this.props.handleDelete}>Delete</button>
                     </div>
-                    <Modal show={this.state.isOpen}
+                    <Modal handleEdit={this.handleEdit}
+                         show={this.state.isOpen}
                          onClose={this.toggleModal}
                          title={this.state.title}>
                     </Modal>

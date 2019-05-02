@@ -11,6 +11,7 @@ class App extends Component {
         title: '',
         id: 0,
         editTitle: false,
+        isOpen: false,
     }
   }
   handleChange = e => {
