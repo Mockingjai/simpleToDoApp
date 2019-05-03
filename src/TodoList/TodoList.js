@@ -13,8 +13,11 @@ class TodoList extends Component{
                                 key={item.id}
                                 title={item.title}
                                 data={this.props.data}
+                                isModalOpen={this.props.isModalOpen}
                                 handleDelete={() => this.props.handleDelete(item.id)}
-                                handleEdit={() => this.props.handleEdit(item.id)}
+                                handleEdit={this.props.handleEdit}
+                                handleChange={this.props.handleChange}
+                                toggleModal={this.props.toggleModal}
                             />
                         )
                     })

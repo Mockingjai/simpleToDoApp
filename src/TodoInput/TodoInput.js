@@ -8,7 +8,7 @@ class TodoInput extends Component {
                     <input
                         type="text"
                         placeholder="Enter task"
-                        defaultValue={this.props.title}
+                        value={this.props.title}
                         onChange={this.props.handleChange}
                     />
                 </div>

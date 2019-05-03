@@ -40,15 +40,25 @@ class App extends Component {
     };
     //Method which update picked task from list
     handleEdit = id => {
+        this.toggleModal();
         const filteredData = this.state.data.filter(item => item.id !== id);
         const selectedData = this.state.data.find(item => item.id === id);
-        console.log(selectedData);
         this.setState({
             data: filteredData,
-            title: selectedData.title,
+            // title: selectedData.title,
             editTitle: true,
             id: id,
-        })
+        });
+        console.log(selectedData);
+    };
+    //Opening and closing modal window
+    toggleModal = () => {
+      this.setState({
+          isModalOpen: !this.state.isModalOpen,
+      });
+        if(!this.state.isModalOpen) {
+            return null;
+        }
     };
     render() {
         return (
@@ -66,8 +76,11 @@ class App extends Component {
                         data={this.state.data}
                         title={this.state.title}
                         id={this.state.id}
+                        isModalOpen={this.state.isModalOpen}
                         handleDelete={this.handleDelete}
                         handleEdit={this.handleEdit}
+                        // handleChange={this.handleChange}
+                        toggleModal={this.toggleModal}
                     />
                 </div>
             </div>
