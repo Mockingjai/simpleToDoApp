@@ -10,10 +10,15 @@ class App extends Component {
             title: '',
             data: [],
             id: 0,
+            isModalOpen: false,
         }
     }
 
-    handleInputChange = e => this.setState({title: e.target.value});
+    handleModalRedactor = () => this.setState({isModalOpen: !this.state.isModalOpen});
+    handleInputChange = e => {
+        this.setState({title: e.target.value});
+        console.log(this.state.title);
+    };
     handleSubmitChanges = e => {
         e.preventDefault();
         const newTitle = {
@@ -27,10 +32,20 @@ class App extends Component {
         });
         console.log(this.state.title);
     };
-    handleDelete = id => {
+    handleDeleteTask = id => {
         const filteredData = this.state.data.filter(listItem => listItem.id !== id);
         this.setState({
             data: filteredData,
+        })
+    };
+    handleEditTask = id => {
+        this.handleModalRedactor();
+        const filteredData = this.state.data.filter(item => item.id !== id);
+        const selectedData = this.state.data.find(item => item.id === id);
+        console.log(selectedData);
+        this.setState({
+            data: filteredData,
+            id: id,
         })
     };
 
@@ -47,7 +62,11 @@ class App extends Component {
                 <TodoList
                     data={this.state.data}
                     title={this.state.title}
-                    handleDelete={this.handleDelete}
+                    handleDelete={this.handleDeleteTask}
+                    handleEditTask={this.handleEditTask}
+                    handleInputChange={this.handleInputChange}
+                    handleModalRedactor={this.handleModalRedactor}
+                    isModalOpen={this.state.isModalOpen}
                 />
             </div>
         )
