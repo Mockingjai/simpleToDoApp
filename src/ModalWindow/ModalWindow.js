@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 class Modal extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            title: this.props.title,
+        }
+    }
     handleChange = e => {
-        console.log(e.target.value);
+        this.setState({
+            title: e.target.value
+        })
+    };
+    handleEdit = () => {
+        this.props.handleEdit(this.state.title);
     };
     render() {
         console.log(this.props.title);
@@ -13,9 +24,9 @@ class Modal extends Component {
         return (
             <div className="backdropStyle">
                 <div className="modalStyle">
-                    <input type="text" onChange={this.handleChange} defaultValue={this.props.title}/>
+                    <input type="text" onChange={this.handleChange} defaultValue={this.state.title}/>
                     <div className="footer">
-                        <button onClick={() => this.props.handleEdit()}>
+                        <button onClick={() => this.handleEdit()}>
                             Edit
                         </button>
                         <button>

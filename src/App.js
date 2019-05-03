@@ -79,7 +79,6 @@ class App extends Component {
                         isModalOpen={this.state.isModalOpen}
                         handleDelete={this.handleDelete}
                         handleEdit={this.handleEdit}
-                        // handleChange={this.handleChange}
                         toggleModal={this.toggleModal}
                     />
                 </div>

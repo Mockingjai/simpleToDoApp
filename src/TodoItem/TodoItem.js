@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import Modal from "../ModalWindow/ModalWindow";
 
 class TodoItem extends Component {
-    handleEdit = title => {
-        this.props.toggleModal();
+    constructor(props){
+        super(props);
+        this.state = {
+            title: this.props.title,
+        }
     }
+    handleEdit = title => {
+        this.setState({title: title});
+        this.props.toggleModal();
+    };
     render() {
         return (
             <div>
                 <li>
-                    <h5>{this.props.title}</h5>
+                    <h5>{this.state.title}</h5>
                     <div>
                         <button onClick={() => this.handleEdit()}>Edit task</button>
                         <button onClick={this.props.handleDelete}>Delete task</button>
@@ -17,8 +24,8 @@ class TodoItem extends Component {
                     <div>
                         <Modal
                             isModalOpen={this.props.isModalOpen}
-                            title={this.props.title}
-                            handleEdit={this.props.handleEdit}
+                            title={this.state.title}
+                            handleEdit={this.handleEdit}
                             // handleChange={this.props.handleChange}
                         />
                     </div>
