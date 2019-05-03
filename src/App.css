@@ -14,3 +14,7 @@
     justify-content: center;
     flex-flow: row;
 }
+.app_wrapper {
+    border: 2px solid hotpink;
+    box-shadow: 5px 10px 4px grey;
+}

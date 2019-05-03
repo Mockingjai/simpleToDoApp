@@ -7,11 +7,19 @@
     width: 400px;
 }
 .task_wrapper {
-    /*border: 1px solid yellow;*/
+    border: 1px solid blanchedalmond;
+    border-radius: 2px 2px 2px 4px;
+    box-shadow: 4px 2px 2px grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 400px;
+    margin: 20px 0 10px 0;
+    padding: 0 10px;
+}
+.task_wrapper:hover {
+    background-color: blanchedalmond;
+    color: #161616;
 }
 .buttons {
     /*border: 1px solid olivedrab;*/

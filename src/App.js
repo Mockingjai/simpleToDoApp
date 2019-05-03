@@ -62,7 +62,7 @@ class App extends Component {
     };
     render() {
         return (
-            <div style={{border: '1px solid black'}}>
+            <div className="app_wrapper">
                 <h1 className='header_title'>Todo App</h1>
                 <div>
                     <TodoInput

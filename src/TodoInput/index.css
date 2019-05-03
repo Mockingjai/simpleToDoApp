@@ -12,6 +12,9 @@
     border-radius: 1px 1px;
     height: 21px;
 }
+.input_field:hover {
+    box-shadow: 4px 2px 2px grey;
+}
 .submit_button {
     font-size: 15px;
     height: 25px;
@@ -21,4 +24,7 @@
     background-color: chocolate;
     color: #fff;
     border-radius: 2px 2px;
+}
+.submit_button:hover {
+    box-shadow: 4px 2px 2px grey;
 }
