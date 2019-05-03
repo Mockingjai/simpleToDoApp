@@ -3,16 +3,18 @@ import React, { Component } from 'react';
 class TodoInput extends Component {
     render() {
         return (
-            <form onSubmit={this.props.handleSubmitChanges}>
-                <input
-                    type="input"
-                    placeholder="Enter Task"
-                    value={this.props.title}
-                    onChange={this.props.handleInputChange}
-                />
-                <button type="submit">
-                    Add task
-                </button>
+            <form onSubmit={this.props.handleSubmit}>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Enter task"
+                        defaultValue={this.props.title}
+                        onChange={this.props.handleChange}
+                    />
+                </div>
+                <div>
+                    <button type="submit">Add Task</button>
+                </div>
             </form>
         )
     }
