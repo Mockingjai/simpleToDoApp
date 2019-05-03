@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './index.css';
+import edit from './edit.png';
+import _delete from './delete.png';
 import Modal from "../ModalWindow/ModalWindow";
 
 class TodoItem extends Component {
@@ -15,11 +18,13 @@ class TodoItem extends Component {
     render() {
         return (
             <div>
-                <li>
-                    <h5>{this.state.title}</h5>
-                    <div>
-                        <button onClick={() => this.handleEdit()}>Edit task</button>
-                        <button onClick={this.props.handleDelete}>Delete task</button>
+                <li className='item_wrapper'>
+                    <div className='task_wrapper'>
+                        <h5>{this.state.title}</h5>
+                        <div className='buttons'>
+                            <img className='edit-img' onClick={() => this.props.toggleModal()} src={edit} alt='edit'/>
+                            <img className='delete-img' onClick={this.props.handleDelete} src={_delete} alt="delete"/>
+                        </div>
                     </div>
                     <div>
                         <Modal

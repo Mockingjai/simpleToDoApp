@@ -1,0 +1,24 @@
+.todo_input_wrapper {
+    display: flex;
+    /*border: 1px solid black;*/
+    flex-direction: row;
+    justify-content: center;
+}
+.input_field {
+    font-family: monospace;
+    color: #212121;
+    font-size: 18px;
+    /*border: 1px solid yellowgreen;*/
+    border-radius: 1px 1px;
+    height: 21px;
+}
+.submit_button {
+    font-size: 15px;
+    height: 25px;
+    margin: 0 0 0 25px;
+    cursor: pointer;
+    border: none;
+    background-color: chocolate;
+    color: #fff;
+    border-radius: 2px 2px;
+}

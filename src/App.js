@@ -62,8 +62,8 @@ class App extends Component {
     };
     render() {
         return (
-            <div>
-                <h1 style={{textAlign: 'center'}}>Todo App</h1>
+            <div style={{border: '1px solid black'}}>
+                <h1 className='header_title'>Todo App</h1>
                 <div>
                     <TodoInput
                         title={this.state.title}
@@ -71,6 +71,7 @@ class App extends Component {
                         handleSubmit={this.handleSubmit}
                     />
                 </div>
+                <hr />
                 <div>
                     <TodoList
                         data={this.state.data}

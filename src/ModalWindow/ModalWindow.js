@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './index.css';
 class Modal extends Component {
     constructor(props){
         super(props);
@@ -24,12 +25,13 @@ class Modal extends Component {
         return (
             <div className="backdropStyle">
                 <div className="modalStyle">
-                    <input type="text" onChange={this.handleChange} defaultValue={this.state.title}/>
+                    <p className='window_title'>Change task or left old task</p>
+                    <input className='input_field' type="text" onChange={this.handleChange} defaultValue={this.state.title}/>
                     <div className="footer">
-                        <button onClick={() => this.handleEdit()}>
+                        <button className='action_buttons' onClick={() => this.handleEdit()}>
                             Edit
                         </button>
-                        <button>
+                        <button className='action_buttons' >
                             Close
                         </button>
                     </div>
@@ -40,7 +42,7 @@ class Modal extends Component {
 }
 
 Modal.propTypes = {
-    onClose: PropTypes.func.isRequired,
+    onClose: PropTypes.func,
     show: PropTypes.bool,
     children: PropTypes.node
 };

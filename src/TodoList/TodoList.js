@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import TodoItem from "../TodoItem/TodoItem";
-
+import './index.css';
 class TodoList extends Component{
     render() {
         return (
-            <div>
-                <h4>TodoList</h4>
+            <div className='list_wrapper'>
+                <h4 className='todoList_header'>TodoList</h4>
                 {
                     this.props.data.map(item => {
                         return (
@@ -15,7 +15,6 @@ class TodoList extends Component{
                                 data={this.props.data}
                                 isModalOpen={this.props.isModalOpen}
                                 handleDelete={() => this.props.handleDelete(item.id)}
-                                handleEdit={this.props.handleEdit}
                                 handleChange={this.props.handleChange}
                                 toggleModal={this.props.toggleModal}
                             />
